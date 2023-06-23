@@ -7,23 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42BBB14C2A44D5F800478E8C /* RecipeVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BBB14B2A44D5F800478E8C /* RecipeVewController.swift */; };
 		42E636C62A44C96600A3436A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E636C52A44C96600A3436A /* AppDelegate.swift */; };
 		42E636C82A44C96600A3436A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E636C72A44C96600A3436A /* SceneDelegate.swift */; };
-		42E636CA2A44C96600A3436A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E636C92A44C96600A3436A /* ViewController.swift */; };
 		42E636CD2A44C96600A3436A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E636CB2A44C96600A3436A /* Main.storyboard */; };
 		42E636CF2A44C96900A3436A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42E636CE2A44C96900A3436A /* Assets.xcassets */; };
 		42E636D22A44C96900A3436A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E636D02A44C96900A3436A /* LaunchScreen.storyboard */; };
+		42E636E02A44CB0100A3436A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E636DF2A44CB0100A3436A /* Recipe.swift */; };
+		42E636E22A44CB7800A3436A /* RecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E636E12A44CB7800A3436A /* RecipeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42BBB14B2A44D5F800478E8C /* RecipeVewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeVewController.swift; sourceTree = "<group>"; };
 		42E636C22A44C96600A3436A /* BeerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E636C52A44C96600A3436A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42E636C72A44C96600A3436A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		42E636C92A44C96600A3436A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		42E636CC2A44C96600A3436A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42E636CE2A44C96900A3436A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		42E636D12A44C96900A3436A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		42E636D32A44C96900A3436A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		42E636DF2A44CB0100A3436A /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		42E636E12A44CB7800A3436A /* RecipeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,73 @@
 		42E636C42A44C96600A3436A /* BeerApp */ = {
 			isa = PBXGroup;
 			children = (
-				42E636C52A44C96600A3436A /* AppDelegate.swift */,
-				42E636C72A44C96600A3436A /* SceneDelegate.swift */,
-				42E636C92A44C96600A3436A /* ViewController.swift */,
-				42E636CB2A44C96600A3436A /* Main.storyboard */,
-				42E636CE2A44C96900A3436A /* Assets.xcassets */,
-				42E636D02A44C96900A3436A /* LaunchScreen.storyboard */,
+				42E636E32A44D35400A3436A /* Service */,
+				42E636DD2A44C9DA00A3436A /* Storyboards */,
+				42E636DC2A44C9D000A3436A /* Models */,
+				42E636DB2A44C9C200A3436A /* Views */,
+				42E636DA2A44C9B400A3436A /* VewControllers */,
+				42E636D92A44C99500A3436A /* App */,
+				42E636DE2A44C9EF00A3436A /* Resourses */,
 				42E636D32A44C96900A3436A /* Info.plist */,
 			);
 			path = BeerApp;
+			sourceTree = "<group>";
+		};
+		42E636D92A44C99500A3436A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				42E636C52A44C96600A3436A /* AppDelegate.swift */,
+				42E636C72A44C96600A3436A /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		42E636DA2A44C9B400A3436A /* VewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				42BBB14B2A44D5F800478E8C /* RecipeVewController.swift */,
+			);
+			path = VewControllers;
+			sourceTree = "<group>";
+		};
+		42E636DB2A44C9C200A3436A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				42E636E12A44CB7800A3436A /* RecipeCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		42E636DC2A44C9D000A3436A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				42E636DF2A44CB0100A3436A /* Recipe.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		42E636DD2A44C9DA00A3436A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				42E636D02A44C96900A3436A /* LaunchScreen.storyboard */,
+				42E636CB2A44C96600A3436A /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		42E636DE2A44C9EF00A3436A /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				42E636CE2A44C96900A3436A /* Assets.xcassets */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		42E636E32A44D35400A3436A /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +200,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42E636CA2A44C96600A3436A /* ViewController.swift in Sources */,
+				42E636E22A44CB7800A3436A /* RecipeCell.swift in Sources */,
+				42BBB14C2A44D5F800478E8C /* RecipeVewController.swift in Sources */,
 				42E636C62A44C96600A3436A /* AppDelegate.swift in Sources */,
 				42E636C82A44C96600A3436A /* SceneDelegate.swift in Sources */,
+				42E636E02A44CB0100A3436A /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
