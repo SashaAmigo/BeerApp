@@ -10,18 +10,19 @@ import UIKit
 final class RecipeViewController: UITableViewController {
     
     private var recipes: [Recipe] = []
+    private let networkManager = NetworkManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.rowHeight = 300
         fetchRecipes()
     }
-
+    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         recipes.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RecipeCell
         
@@ -30,29 +31,19 @@ final class RecipeViewController: UITableViewController {
         
         return cell
     }
-
-}
-
-// MARK: - Networking
-extension RecipeViewController {
     private func fetchRecipes() {
-        guard let url = URL(string: "https://api.punkapi.com/v2/beers") else { return }
-        
-        URLSession.shared.dataTask(with: url) { (data, _, _) in
-            guard let data = data else { return }
-            
-            do {
-                let decoder = JSONDecoder()
-                self.recipes = try decoder.decode([Recipe].self, from: data)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch let error {
-                print(error.localizedDescription)
+        networkManager.fetchRecipes(from: Link.randomURL.url) { [weak self] result in
+            switch result {
+            case .success(let recipes):
+                self?.recipes = recipes
+                self?.tableView.reloadData()
+            case .failure(let error):
+                print(error)
             }
-            
-        }.resume()
+        }
     }
+    
 }
+
 
 

@@ -13,23 +13,23 @@ final class RecipeCell: UITableViewCell {
     @IBOutlet var tagLine: UILabel!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var descript: UILabel!
-    @IBOutlet var butleImage: UIImageView!
+    @IBOutlet var bottleImage: UIImageView!
+    
+    private let networkManager = NetworkManager.shared
     
     func configure(with recipe: Recipe) {
         nameLabel.text = recipe.name
-        abv.text = "ABV: \(recipe.abv ?? 0)"
+        abv.text = "ABV: \(recipe.abv )"
         descript.text = recipe.description
         tagLine.text = recipe.tagLine
         
-        DispatchQueue.global().async {
-            guard let stringUrl = recipe.imageUrl else { return }
-            guard let imageUrl = URL(string: stringUrl) else { return }
-            guard let imageData = try? Data(contentsOf: imageUrl) else { return }
-            
-            DispatchQueue.main.async {
-                self.butleImage.image = UIImage(data: imageData)
+        networkManager.fetchData(from: recipe.imageUrl ) { [weak self] result in
+            switch result {
+            case .success(let imageData):
+                self?.bottleImage.image = UIImage(data: imageData)
+            case .failure(let error):
+                print(error)
             }
         }
     }
 }
-

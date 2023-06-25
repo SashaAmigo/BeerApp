@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		42BBB14C2A44D5F800478E8C /* RecipeVewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BBB14B2A44D5F800478E8C /* RecipeVewController.swift */; };
+		42BBB14E2A482D2A00478E8C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BBB14D2A482D2A00478E8C /* NetworkManager.swift */; };
+		42BBB1512A48550B00478E8C /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 42BBB1502A48550B00478E8C /* Alamofire */; };
 		42E636C62A44C96600A3436A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E636C52A44C96600A3436A /* AppDelegate.swift */; };
 		42E636C82A44C96600A3436A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E636C72A44C96600A3436A /* SceneDelegate.swift */; };
 		42E636CD2A44C96600A3436A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42E636CB2A44C96600A3436A /* Main.storyboard */; };
@@ -19,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		42BBB14B2A44D5F800478E8C /* RecipeVewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeVewController.swift; sourceTree = "<group>"; };
+		42BBB14D2A482D2A00478E8C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		42E636C22A44C96600A3436A /* BeerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42E636C52A44C96600A3436A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42E636C72A44C96600A3436A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42BBB1512A48550B00478E8C /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,6 +129,7 @@
 		42E636E32A44D35400A3436A /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				42BBB14D2A482D2A00478E8C /* NetworkManager.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -145,6 +150,9 @@
 			dependencies = (
 			);
 			name = BeerApp;
+			packageProductDependencies = (
+				42BBB1502A48550B00478E8C /* Alamofire */,
+			);
 			productName = BeerApp;
 			productReference = 42E636C22A44C96600A3436A /* BeerApp.app */;
 			productType = "com.apple.product-type.application";
@@ -173,6 +181,9 @@
 				Base,
 			);
 			mainGroup = 42E636B92A44C96600A3436A;
+			packageReferences = (
+				42BBB14F2A48550B00478E8C /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 42E636C32A44C96600A3436A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -200,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42BBB14E2A482D2A00478E8C /* NetworkManager.swift in Sources */,
 				42E636E22A44CB7800A3436A /* RecipeCell.swift in Sources */,
 				42BBB14C2A44D5F800478E8C /* RecipeVewController.swift in Sources */,
 				42E636C62A44C96600A3436A /* AppDelegate.swift in Sources */,
@@ -422,6 +434,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		42BBB14F2A48550B00478E8C /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		42BBB1502A48550B00478E8C /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 42BBB14F2A48550B00478E8C /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 42E636BA2A44C96600A3436A /* Project object */;
 }
